@@ -14,7 +14,20 @@ let state = {
             {id: 1, message: 'Hi'},
             {id: 2, message: 'How are you'}
         ]
+    },
+    friendsPages: {
+        fullName: [
+            {name: 'Anatolii', surname: 'Ochertnyi'},
+            {name: 'Denis', surname: 'Harchuk'},
+        ]
+    },
+    navBar: {
+        bestFriends: [
+            {name: 'first'},
+            {name: 'second'},
+            {name: 'third'}
+        ]
     }
-}
+};
 
 export default state;
