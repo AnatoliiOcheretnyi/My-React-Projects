@@ -4,15 +4,21 @@ import Post from './Posts/Post';
 
 const MyPosts = (props) => {
     let postsElement = props.posts.map(p => <Post counter={p.counter} message={p.message} />)
+
+    let newPost = React.createRef();
+    let addPost = () => {
+        let post = newPost.current.value;
+        alert(post)
+    };
     return (
         <div className={classes.myPostsBlock}>
             <h2>My Posts</h2>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPost}></textarea>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
             </div>
             <div className={classes.posts}>
