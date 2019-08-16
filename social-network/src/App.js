@@ -9,7 +9,7 @@ import News from './components/News/News'
 import Music from './components/Music/Music'
 import Friends from './components/Friends/Friends';
 import {BrowserRouter, Route} from 'react-router-dom';
-import {updateTextPost} from "./redux/state";
+import {sendMessage, updateTextMessage, updateTextPost} from "./redux/state";
 
 const App = (props) => {
     return (
@@ -21,9 +21,12 @@ const App = (props) => {
                        render={() => <Profile
                            profilePage={props.state.profilePage}
                            addPost={props.addPost}
-                           updatePostText={props.updatePostText}/>}/>
+                           updateTextPost={props.updateTextPost}/>}/>
                 <Route path='/dialogs'
-                       render={() => <Dialogs state={props.state.dialogsPages}/>}/>
+                       render={() => <Dialogs
+                           state={props.state.dialogsPages}
+                           sendMessage={props.sendMessage}
+                           updateTextMessage={props.updateTextMessage}/>}/>
                 <Route path='/music' component={Music}/>
                 <Route path='/news' component={News}/>
                 <Route path='/settings' component={Settings}/>
