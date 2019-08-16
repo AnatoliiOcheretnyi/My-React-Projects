@@ -6,16 +6,16 @@ import MessageItem from "./MessageItem/MessageItem";
 const Dialogs = (props) => {
     let dialogsElement = props.state.dialogs.map(d => <DialogsItem name={d.name} id={d.id}/>)
     let messagesElement = props.state.messages.map(m => <MessageItem message={m.message}/>)
-    // let newM =
 
     let newMessage = React.createRef();
     let sendMessage = () => {
-        props.sendMessage()
+        props.dispatch({type: 'SEND-MESSAGE'})
     };
 
     let changeMessage = () => {
         let text = newMessage.current.value
-        props.updateTextMessage(text)
+        let action = {type: 'UPDATE-TEXT-MESSAGE', newText: text};
+        props.dispatch(action)
     }
 
     return (
