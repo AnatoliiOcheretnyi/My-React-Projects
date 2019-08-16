@@ -8,7 +8,8 @@ const MyPosts = (props) => {
     let newPost = React.createRef();
     let addPost = () => {
         let post = newPost.current.value;
-        alert(post)
+        props.addPost(post)
+        newPost.current.value = '';
     };
     return (
         <div className={classes.myPostsBlock}>
