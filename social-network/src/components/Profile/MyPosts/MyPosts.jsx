@@ -20,7 +20,7 @@ const MyPosts = (props) => {
             <h2>My Posts</h2>
             <div>
                 <div>
-                    <textarea ref={newPost} onChange={changePost}
+                    <textarea placeholder='what is your news?' ref={newPost} onChange={changePost}
                               value={props.newPostText}/>
                 </div>
                 <div>

@@ -9,7 +9,7 @@ import News from './components/News/News'
 import Music from './components/Music/Music'
 import Friends from './components/Friends/Friends';
 import {BrowserRouter, Route} from 'react-router-dom';
-import {sendMessage, updateTextMessage, updateTextPost} from "./redux/state";
+import {sendMessage, updateTextMessage, updateTextPost} from "./redux/store";
 
 const App = (props) => {
     return (
